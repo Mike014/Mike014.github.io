@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (message.includes('GitHub')) {
             return 'You can find my GitHub profile here: <a href="https://github.com/Mike014" target="_blank">GitHub</a>';
         } else if (message.includes('CV')) {
-            return 'You can download my CV here: <a href="https://Mike014.github.io/Michele%20Grimaldi.pdf" download>Download CV</a>';
+            return 'You can download my CV here: <a href="https://drive.google.com/file/d/1oCYa-MGkEwIRMs6Y2g0gYt6duSrDK5l_/view" download>Download CV</a>';
         } else if (message.includes('Bye')) {
             return 'Goodbye!';
         } else {
@@ -37,5 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
 
 
