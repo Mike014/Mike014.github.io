@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="assets/photo.jpg" alt="Your Photo">
+        <h1 class="glitch">Hi, I'm Michele</h1>
+        <p>
+            I am Michele, a Junior Software Developer specializing in back-end and audio technologies. I use Python, Rust, C++, and C to create web applications with Django and develop custom audio software. I have advanced skills in SQL and experience with Unreal Engine 5 for integrating audio features. My goal is to combine NLP and DSP for intelligent voice assistants and advanced audio solutions. This site showcases my work, from software development to sound design, all created by me. Additionally, if you click on the icons, you will hear notification sounds, demonstrating my skills in UI/UX sound design. You can also interact with the chatbot to get my credentials. Just type "LinkedIn", "GitHub", or "CV" to get the respective links.
+        </p>
+        <a href="https://Mike014.github.io/Michele%20Grimaldi.pdf" class="button" download>Download CV</a>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/michele-grimaldi-599b36280/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Mike014" target="_blank">GitHub</a>
+        </div>
+        <button id="chatbot-button" class="button">Chat with me</button>
+        <div id="chatbot-container" class="hidden">
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Type a message...">
+            <button id="send-message" class="button">Send</button>
+        </div>
+        <button id="play-spotify" class="button">Play Spotify</button>
+        <div id="spotify-container" class="hidden">
+            <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/1TEZWG1FdjzDdercCguTwj?si=802e865fea584265" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </div>
+    <script src="scripts/chatbot.js"></script>
+    <script src="scripts/soundEffects.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
