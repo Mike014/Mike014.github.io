@@ -2,8 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #1b1b1b; /* Sfondo scuro per lo stile Cyberpunk */
-    color: #e0e0e0; /* Testo chiaro per contrasto */
+    background: #1b1b1b;
+    color: #e0e0e0;
 }
 
 .container {
@@ -11,12 +11,12 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background: #2a2a2a; /* Scuro con sfumature Cyberpunk */
+    background: #2a2a2a;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Per effetti glitch */
+    overflow: hidden;
 }
 
 img {
@@ -24,7 +24,7 @@ img {
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    border: 2px solid #00ffcc; /* Colore Cyberpunk */
+    border: 2px solid #00ffcc;
     box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
     display: block;
     margin: 0 auto;
@@ -37,7 +37,7 @@ img {
 
 h1 {
     color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc; /* Effetto luminoso */
+    text-shadow: 0 0 10px #00ffcc;
 }
 
 p {
@@ -54,7 +54,7 @@ p {
 }
 
     .links a:hover {
-        color: #ff0066; /* Colore al passaggio */
+        color: #ff0066;
     }
 
 .button {
@@ -72,10 +72,9 @@ p {
 
     .button:hover {
         background: #00e6b8;
-        filter: brightness(1.1); /* Effetto luminoso */
+        filter: brightness(1.1);
     }
 
-    /* Aggiungi margine inferiore al pulsante "Download CV" */
     .button[download] {
         margin-bottom: 20px;
     }
@@ -101,7 +100,6 @@ p {
     display: none;
 }
 
-/* Effetti glitch */
 @keyframes glitch {
     0% {
         text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
