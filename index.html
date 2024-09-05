@@ -15,6 +15,11 @@
 
             playSpotifyButton.addEventListener('click', function() {
                 spotifyContainer.classList.toggle('hidden');
+                
+                if (!spotifyContainer.classList.contains('hidden')) {
+                    const iframe = document.getElementById('spotify-iframe');
+                    iframe.src += '&autoplay=1'; 
+                }
             });
         });
     </script>
@@ -48,9 +53,7 @@
             <input type="text" id="chatbot-input" placeholder="Type a message...">
             <button id="send-message" class="button">Send</button>
         </div>
-        <button id="play-spotify" class="button">
-            <img src="assets/spotify-icon.png" alt="Play Spotify" style="width: 24px; height: 24px;">
-        </button>
+        <button id="play-spotify" class="button">Play Spotify</button>
         <div id="spotify-container" class="hidden">
             <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/40k8Fcfap0ZOiMClwz9VlP?si=85f386f301554d7a"
                 width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
