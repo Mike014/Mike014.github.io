@@ -31,9 +31,9 @@ img {
     transition: transform 0.3s ease;
 }
 
-    img:hover {
-        transform: scale(1.05);
-    }
+img:hover {
+    transform: scale(1.05);
+}
 
 h1 {
     color: #00ffcc;
@@ -53,9 +53,9 @@ p {
     transition: color 0.3s ease;
 }
 
-    .links a:hover {
-        color: #ff0066;
-    }
+.links a:hover {
+    color: #ff0066;
+}
 
 .button {
     display: inline-block;
@@ -70,49 +70,42 @@ p {
     transition: background 0.3s ease, filter 0.3s ease;
 }
 
-    .button:hover {
-        background: #00e6b8;
-        filter: brightness(1.1);
-    }
-
-    .button[download] {
-        margin-bottom: 20px;
-    }
-
-#chatbot-container {
-    margin-top: 20px;
-    background: #222;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
+.button:hover {
+    background: #00e6b8;
+    filter: brightness(1.1);
 }
 
-#chatbot-input {
-    width: calc(100% - 110px);
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #00ffcc;
-    background: #333;
-    color: #fff;
+.button[download] {
+    margin-bottom: 20px;
+}
+
+#spotify-container {
+    display: none;
+    margin-top: 20px;
+}
+
+#spotify-toggle:checked + #spotify-container {
+    display: block;
+}
+
+iframe {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
 }
 
 .hidden {
     display: none;
 }
 
-#spotify-container:target {
-    display: block;
-}
-
 @keyframes glitch {
     0% {
         text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
     }
-
     50% {
         text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
     }
-
     100% {
         text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
     }
@@ -122,13 +115,3 @@ p {
     animation: glitch 1s infinite;
 }
 
-.hidden {
-    display: none;
-}
-
-iframe {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1000;
-}
