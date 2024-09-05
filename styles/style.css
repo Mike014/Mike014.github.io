@@ -23,8 +23,9 @@ body {
 
 /* Stile dell'immagine del profilo */
 .profile-photo {
-    width: 200px; /* Larghezza dell'immagine */
-    height: 200px; /* Altezza dell'immagine */
+    width: 100%; /* Larghezza dell'immagine al 100% del contenitore */
+    max-width: 200px; /* Larghezza massima dell'immagine */
+    height: auto; /* Altezza automatica per mantenere le proporzioni */
     margin-bottom: 20px; /* Spaziatura inferiore */
     position: relative; /* Posizionamento relativo per l'animazione */
     border-radius: 0; /* Rende l'immagine quadrata */
@@ -39,6 +40,34 @@ body {
         background-color: rgba(0, 255, 204, 0.1); /* Cambia il colore di sfondo */
         animation: glitch 1s infinite; /* Aggiunge l'animazione di glitch */
     }
+
+/* Stili responsivi */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .profile-photo {
+        max-width: 150px; /* Riduce la larghezza massima su schermi piccoli */
+    }
+
+    .button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #chatbot-container {
+        width: 100%;
+    }
+
+    #chatbot-input {
+        width: calc(100% - 70px);
+    }
+
+    #send-message {
+        width: 60px;
+    }
+}
 
 /* Stile del testo con effetto glitch */
 .glitch {
@@ -147,7 +176,7 @@ iframe {
         content: '_'; /* Trattino basso */
         animation: blink 1s step-end infinite; /* Animazione di blink */
         position: absolute; /* Posizionamento assoluto */
-        right: +285px; /* Allinea a destra con un offset negativo */
+        right: -10px; /* Allinea a destra con un offset negativo */
     }
 
 /* Animazione per il trattino basso intermittente */
@@ -160,8 +189,3 @@ iframe {
         opacity: 0; /* Trattino invisibile */
     }
 }
-
-
-
-
-
