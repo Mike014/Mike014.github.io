@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (message.includes('Bye')) {
             return 'Goodbye!';
         } else {
-            return "I'm sorry, I don't understand that.";
+            return "I'm sorry, I don't understand that, justy type 'LinkedIn', 'GitHub', 'CV', or say 'Bye'.";
         }
     }
 });
