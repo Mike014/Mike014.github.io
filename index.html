@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
-    <link rel="stylesheet" href="static/style.css">
-    <script src="static/chatbot.js" defer></script>
-    <script src="static/soundEffects.js" defer></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/chatbot.js" defer></script>
+    <script src="scripts/soundEffects.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const playSpotifyButton = document.getElementById('play-spotify');
+            const spotifyContainer = document.getElementById('spotify-container');
+
+            playSpotifyButton.addEventListener('click', function() {
+                spotifyContainer.classList.toggle('hidden');
+            });
+        });
+    </script>
 </head>
+
 <body>
     <div class="container">
         <img src="assets/photo.jpg" alt="Your Photo">
@@ -23,24 +35,32 @@
             "LinkedIn", "GitHub", or "CV" to get the respective links. Additionally, explore the notification sounds to experience
             my skills in UI/UX sound design, demonstrating how audio can enhance user interaction.
         </p>
-        <a href="https://drive.google.com/file/d/1oCYa-MGkEwIRMs6Y2g0gYt6duSrDK5l_/view" class="button" download>Download CV</a>
+        <a href="https://drive.google.com/file/d/1oCYa-MGkEwIRMs6Y2g0gYt6duSrDK5l_/view" class="button" download>
+            Download CV
+        </a>
         <div class="links">
             <a href="https://www.linkedin.com/in/michele-grimaldi-599b36280/" target="_blank">LinkedIn</a>
             <a href="https://github.com/Mike014" target="_blank">GitHub</a>
         </div>
-        <button id="advanced-chatbot-button" class="button">Advanced Chatbot</button>
+        <button id="chatbot-button" class="button">Chat with me</button>
         <div id="chatbot-container" class="hidden">
             <div id="chatbot-messages"></div>
             <input type="text" id="chatbot-input" placeholder="Type a message...">
             <button id="send-message" class="button">Send</button>
         </div>
-        <button id="play-spotify" class="button">Play Spotify</button>
+        <button id="play-spotify" class="button">
+            <img src="assets/spotify-icon.png" alt="Play Spotify" style="width: 24px; height: 24px;">
+        </button>
         <div id="spotify-container" class="hidden">
-            <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/1TEZWG1FdjzDdercCguTwj?si=802e865fea584265" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/40k8Fcfap0ZOiMClwz9VlP?si=85f386f301554d7a"
+                width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
+            </iframe>
         </div>
     </div>
 </body>
+
 </html>
+
 
 
 
