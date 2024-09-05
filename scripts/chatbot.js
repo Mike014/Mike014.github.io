@@ -14,11 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
     sendMessageButton.addEventListener('click', () => {
         const message = chatbotInput.value;
         if (message) {
-            const response = getChatbotResponse(message);
-            chatbotMessages.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
-            chatbotMessages.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+            addMessage('user', message);
             chatbotInput.value = '';
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            setTimeout(() => {
+                playTypingSound();
+                simulateTyping('chatbot', 'Processing your request...', message);
+            }, 500);
         }
     });
 
@@ -41,19 +42,71 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (lowerCaseMessage.includes('tell me something about michele grimaldi')) {
             return 'Michele Grimaldi is a Junior Software Developer specializing in back-end and audio technologies. He uses Python, Rust, C++, and C for web applications and custom audio software. He aims to combine NLP and DSP for advanced audio solutions. You can contact him at mikgrimaldi7@gmail.com.';
         } else if (lowerCaseMessage.startsWith('uppercase ')) {
-            const textToConvert = message.slice(10); 
+            const textToConvert = message.slice(10);
             return textToConvert.toUpperCase();
         } else if (lowerCaseMessage.startsWith('lowercase ')) {
-            const textToConvert = message.slice(10); 
+            const textToConvert = message.slice(10);
             return textToConvert.toLowerCase();
         } else if (lowerCaseMessage.startsWith('capitalize ')) {
-            const textToConvert = message.slice(11); 
+            const textToConvert = message.slice(11);
             return textToConvert.charAt(0).toUpperCase() + textToConvert.slice(1).toLowerCase();
         } else {
             return "I'm sorry, I don't understand that. Just type 'LinkedIn', 'GitHub', 'CV', or say 'Bye', or just ask something about Michele Grimaldi.";
         }
     }
+
+    function addMessage(sender, text) {
+        const messageElement = document.createElement('p');
+        messageElement.innerHTML = `<strong>${sender === 'user' ? 'You' : 'Bot'}:</strong> ${text}`;
+        chatbotMessages.appendChild(messageElement);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function playTypingSound() {
+        const typingSound = document.getElementById('typing-sound');
+        typingSound.play().catch(function (error) {
+            console.error('Error playing typing sound:', error);
+        });
+    }
+
+    function simulateTyping(sender, typingText, originalMessage) {
+        const messageElement = document.createElement('p');
+        messageElement.innerHTML = `<strong>Bot:</strong> ${typingText}`;
+        chatbotMessages.appendChild(messageElement);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+        let index = 0;
+        const interval = setInterval(() => {
+            if (index < typingText.length) {
+                messageElement.innerHTML = `<strong>Bot:</strong> ${typingText.slice(0, index + 1)}`;
+                index++;
+                playTypingSound();
+            } else {
+                clearInterval(interval);
+                const response = getChatbotResponse(originalMessage);
+                simulateTypingResponse('chatbot', response, messageElement);
+            }
+        }, 100); // Simulate typing effect
+    }
+
+    function simulateTypingResponse(sender, responseText, messageElement) {
+        let index = 0;
+        const interval = setInterval(() => {
+            if (index < responseText.length) {
+                messageElement.innerHTML = `<strong>Bot:</strong> ${responseText.slice(0, index + 1)}`;
+                index++;
+                playTypingSound();
+            } else {
+                clearInterval(interval);
+                messageElement.innerHTML = `<strong>Bot:</strong> ${responseText}`;
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+        }, 100); // Simulate typing effect for response
+    }
 });
+
+
+
 
 
 
