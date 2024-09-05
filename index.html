@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="static/chatbot.js" defer></script>
+    <script src="static/soundEffects.js" defer></script>
 </head>
-
 <body>
     <div class="container">
         <img src="assets/photo.jpg" alt="Your Photo">
         <h1 class="glitch">Hi, I'm Michele</h1>
         <p>
-            I am Michele, a Junior Software Developer with expertise in Python (Django, Flask), Node.js, Rust, C++, and C.
-            I develop web applications using HTML, CSS, and JavaScript, and manage databases with SQL. Additionally, I
-            integrate audio code into Unreal Engine 5 to enhance game audio. My focus is on combining NLP and DSP to create
-            intelligent voice assistants and advanced audio tools.
+            I am Michele, a Junior Software Developer specializing in back-end and audio technologies. I use Python, Rust, C++, and C to create web applications with Django and develop custom audio software. I have advanced skills in SQL and experience with Unreal Engine 5 for integrating audio features. My goal is to combine NLP and DSP for intelligent voice assistants and advanced audio solutions. This site showcases my work, from software development to sound design, all created by me. Additionally, if you click on the icons, you will hear notification sounds, demonstrating my skills in UI/UX sound design. You can also interact with the chatbot to get my credentials. Just type "LinkedIn", "GitHub", or "CV" to get the respective links.
         </p>
-        <p>
-            This site showcases my work in software development and sound design. You can interact with the chatbot by typing
-            "LinkedIn", "GitHub", or "CV" to get the respective links. Additionally, explore the notification sounds to experience
-            my skills in UI/UX sound design, demonstrating how audio can enhance user interaction.
-        </p>
-        <a href="https://drive.google.com/file/d/1oCYa-MGkEwIRMs6Y2g0gYt6duSrDK5l_/view" class="button" download>
-            Download CV
-        </a>
+        <a href="https://drive.google.com/file/d/1oCYa-MGkEwIRMs6Y2g0gYt6duSrDK5l_/view" class="button" download>Download CV</a>
         <div class="links">
             <a href="https://www.linkedin.com/in/michele-grimaldi-599b36280/" target="_blank">LinkedIn</a>
             <a href="https://github.com/Mike014" target="_blank">GitHub</a>
         </div>
-        <input type="checkbox" id="spotify-toggle" class="hidden">
-        <label for="spotify-toggle" class="button">Play Spotify</label>
+        <button id="advanced-chatbot-button" class="button">Advanced Chatbot</button>
+        <div id="chatbot-container" class="hidden">
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Type a message...">
+            <button id="send-message" class="button">Send</button>
+        </div>
+        <button id="play-spotify" class="button">Play Spotify</button>
         <div id="spotify-container" class="hidden">
             <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/1TEZWG1FdjzDdercCguTwj?si=802e865fea584265" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>
 </body>
-
 </html>
-
 
 
 
