@@ -100,6 +100,10 @@ p {
     display: none;
 }
 
+#spotify-container:target {
+    display: block;
+}
+
 @keyframes glitch {
     0% {
         text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
