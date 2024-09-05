@@ -8,6 +8,7 @@ body {
     align-items: center; /* Centra il contenuto verticalmente */
     height: 100vh; /* Altezza della pagina pari alla finestra del browser */
     margin: 0; /* Rimuove i margini predefiniti */
+    overflow: hidden; /* Nasconde gli overflow */
 }
 
 /* Stile del contenitore principale */
@@ -17,63 +18,59 @@ body {
     padding: 20px; /* Spaziatura interna */
     border: 2px solid #00ffcc; /* Bordo verde acqua */
     border-radius: 10px; /* Angoli arrotondati */
-    box-shadow: 0 0 20px #00ffcc; /* Ombra verde acqua */
+    box-shadow: 0 0 10px #00ffcc; /* Ombra verde acqua */
     background: #1a1a1a; /* Sfondo scuro per il contenitore */
+    position: relative; /* Posizionamento relativo */
+    z-index: 1; /* Livello di profondità */
+    animation: neon 1.5s infinite alternate; /* Effetto neon */
 }
 
 /* Stile dell'immagine del profilo */
 .profile-photo {
-    width: 100%; /* Larghezza dell'immagine al 100% del contenitore */
-    max-width: 200px; /* Larghezza massima dell'immagine */
-    height: auto; /* Altezza automatica per mantenere le proporzioni */
+    width: 200px; /* Larghezza dell'immagine */
+    height: 200px; /* Altezza dell'immagine */
     margin-bottom: 20px; /* Spaziatura inferiore */
     position: relative; /* Posizionamento relativo per l'animazione */
-    border-radius: 0; /* Rende l'immagine quadrata */
+    border-radius: 50%; /* Rende l'immagine circolare */
     overflow: hidden; /* Nasconde gli elementi fuori dai bordi */
+    border: 2px solid #00ffcc; /* Bordo verde acqua */
+    box-shadow: 0 0 10px #00ffcc; /* Ombra verde acqua */
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Transizione per hover */
 }
 
     /* Effetto hover per l'immagine del profilo */
     .profile-photo:hover {
         transform: scale(1.1); /* Ingrandisce l'immagine */
-        box-shadow: 0 0 15px rgba(0, 255, 204, 0.7), inset 0 0 10px rgba(0, 255, 204, 0.5); /* Aggiunge un'ombra esterna e interna */
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.7), inset 0 0 5px rgba(0, 255, 204, 0.5); /* Aggiunge un'ombra esterna e interna */
         background-color: rgba(0, 255, 204, 0.1); /* Cambia il colore di sfondo */
         animation: glitch 1s infinite; /* Aggiunge l'animazione di glitch */
     }
 
-/* Stili responsivi */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
-    .profile-photo {
-        max-width: 150px; /* Riduce la larghezza massima su schermi piccoli */
-    }
-
-    .button {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    #chatbot-container {
-        width: 100%;
-    }
-
-    #chatbot-input {
-        width: calc(100% - 70px);
-    }
-
-    #send-message {
-        width: 60px;
-    }
-}
-
-/* Stile del testo con effetto glitch */
-.glitch {
-    font-size: 1.5em; /* Dimensione del font ridotta */
+/* Stile del titolo con effetto cyberpunk */
+.cyberpunk-title {
+    font-size: 2.5em; /* Dimensione del font */
+    color: #00ffcc; /* Colore del testo neon verde acqua */
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc; /* Ombra neon */
     animation: glitch 1s infinite; /* Animazione di glitch */
     position: relative; /* Posizionamento relativo per l'effetto glitch */
+}
+
+/* Aggiornamento dell'animazione di glitch per il titolo */
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px #00ffcc, -2px -2px #ff00ff; /* Ombra del testo */
+        clip: rect(24px, 9999px, 44px, 0);
+    }
+
+    20% {
+        text-shadow: -2px -2px #00ffcc, 2px 2px #ff00ff; /* Ombra del testo invertita */
+        clip: rect(85px, 9999px, 140px, 0);
+    }
+
+    100% {
+        text-shadow: -2px -2px #00ffcc, 2px 2px #ff00ff; /* Ombra del testo invertita */
+        clip: rect(0px, 9999px, 70px, 0);
+    }
 }
 
 /* Stile dei pulsanti */
@@ -88,12 +85,14 @@ body {
     border-radius: 5px; /* Angoli arrotondati */
     font-size: 18px; /* Dimensione del font */
     transition: background 0.3s ease, filter 0.3s ease; /* Transizione per hover */
+    box-shadow: 0 0 5px #00ffcc; /* Ombra verde acqua */
 }
 
     /* Stile dei pulsanti al passaggio del mouse */
     .button:hover {
         background: #00e6b8; /* Cambia il colore di sfondo */
         filter: brightness(1.1); /* Aumenta la luminosità */
+        box-shadow: 0 0 10px #00e6b8; /* Ombra verde acqua */
     }
 
     /* Stile dei pulsanti con attributo download */
@@ -104,11 +103,12 @@ body {
 /* Stile del contenitore del chatbot */
 #chatbot-container {
     margin-top: 20px; /* Spaziatura superiore */
-    background: inherit; /* Sfondo chiaro */
+    background: #1a1a1a; /* Sfondo scuro */
     padding: 10px; /* Spaziatura interna */
     border-radius: 5px; /* Angoli arrotondati */
     box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5); /* Ombra verde acqua */
-    color: #00ffcc; /* Colore del testo nero */
+    color: #00ffcc; /* Colore del testo */
+    animation: neon 1.5s infinite alternate; /* Effetto neon */
 }
 
 /* Stile dei messaggi del chatbot */
@@ -124,8 +124,8 @@ body {
     padding: 10px; /* Spaziatura interna */
     margin-right: 10px; /* Spaziatura destra */
     border: 1px solid #00ffcc; /* Bordo verde acqua */
-    background: padding-box; /* Sfondo bianco */
-    color: #00ffcc; /* Colore del testo nero */
+    background: #0d0d0d; /* Sfondo scuro */
+    color: #00ffcc; /* Colore del testo */
 }
 
 /* Classe per nascondere elementi */
@@ -167,25 +167,18 @@ iframe {
     background: inherit; /* Sfondo scuro */
     padding: 10px; /* Spaziatura interna */
     border-radius: 5px; /* Angoli arrotondati */
-    position: relative; /* Posizionamento relativo per il trattino basso */
-    display: inline-block; /* Necessario per il trattino basso */
+    position: relative; /* Posizionamento relativo */
+    display: inline-block; /* Necessario per il posizionamento */
+    animation: neon 1.5s infinite alternate; /* Effetto neon */
 }
 
-    /* Aggiungi un trattino basso intermittente */
-    .terminal-text::after {
-        content: '_'; /* Trattino basso */
-        animation: blink 1s step-end infinite; /* Animazione di blink */
-        position: absolute; /* Posizionamento assoluto */
-        right: -10px; /* Allinea a destra con un offset negativo */
-    }
-
-/* Animazione per il trattino basso intermittente */
-@keyframes blink {
+/* Effetto neon per i bordi */
+@keyframes neon {
     0%, 100% {
-        opacity: 1; /* Trattino visibile */
+        box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
     }
 
     50% {
-        opacity: 0; /* Trattino invisibile */
+        box-shadow: 0 0 10px #00e6b8, 0 0 20px #00e6b8, 0 0 40px #00e6b8, 0 0 80px #00e6b8;
     }
 }
