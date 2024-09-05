@@ -12,13 +12,18 @@
         document.addEventListener('DOMContentLoaded', function() {
             const playSpotifyButton = document.getElementById('play-spotify');
             const spotifyContainer = document.getElementById('spotify-container');
+            const iframe = document.getElementById('spotify-iframe');
 
             playSpotifyButton.addEventListener('click', function() {
+                // Mostra o nasconde l'iframe
                 spotifyContainer.classList.toggle('hidden');
                 
+                // Avvia la riproduzione solo se l'iframe è visibile
                 if (!spotifyContainer.classList.contains('hidden')) {
-                    const iframe = document.getElementById('spotify-iframe');
-                    iframe.src += '&autoplay=1'; 
+                    // Forza la riproduzione
+                    const currentSrc = iframe.src;
+                    iframe.src = ''; // Pulisce il src per riavviare l'iframe
+                    iframe.src = currentSrc + '&autoplay=1'; // Ricarica l'iframe con autoplay
                 }
             });
         });
@@ -63,6 +68,7 @@
 </body>
 
 </html>
+
 
 
 
