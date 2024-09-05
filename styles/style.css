@@ -5,10 +5,10 @@ body {
     font-family: 'Cascadia Mono', monospace; /* Font monospace */
     display: flex; /* Utilizzo del flexbox per il layout */
     justify-content: center; /* Centra il contenuto orizzontalmente */
-    align-items: center; /* Centra il contenuto verticalmente */
-    height: 100vh; /* Altezza della pagina pari alla finestra del browser */
+    align-items: flex-start; /* Allinea il contenuto in alto */
+    min-height: 100vh; /* Altezza minima della pagina pari alla finestra del browser */
     margin: 0; /* Rimuove i margini predefiniti */
-    overflow: auto; /* Nasconde gli overflow */
+    overflow: auto; /* Permette lo scorrimento */
 }
 
 /* Stile del contenitore principale */
@@ -23,6 +23,7 @@ body {
     position: relative; /* Posizionamento relativo */
     z-index: 1; /* Livello di profondità */
     animation: neon 1.5s infinite alternate; /* Effetto neon */
+    margin-bottom: 20px; /* Spaziatura inferiore per evitare che il contenuto venga tagliato */
 }
 
 /* Stile dell'immagine del profilo */
