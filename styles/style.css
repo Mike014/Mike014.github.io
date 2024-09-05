@@ -8,7 +8,7 @@ body {
     align-items: center; /* Centra il contenuto verticalmente */
     height: 100vh; /* Altezza della pagina pari alla finestra del browser */
     margin: 0; /* Rimuove i margini predefiniti */
-    overflow: hidden; /* Nasconde gli overflow */
+    overflow: auto; /* Nasconde gli overflow */
 }
 
 /* Stile del contenitore principale */
