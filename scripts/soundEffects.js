@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
     playSpotifyButton.addEventListener('click', () => {
         spotifyContainer.classList.toggle('hidden');
         if (!spotifyContainer.classList.contains('hidden')) {
-            spotifyIframe.src += "&autoplay=1"; 
+            spotifyIframe.src += "&autoplay=1";
         }
     });
 });
+
 
 

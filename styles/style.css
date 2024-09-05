@@ -1,79 +1,167 @@
+/* Impostazioni generali del corpo della pagina */
+body {
+    background: #0d0d0d; /* Colore di sfondo scuro */
+    color: #00ffcc; /* Colore del testo verde acqua */
+    font-family: 'Cascadia Mono', monospace; /* Font monospace */
+    display: flex; /* Utilizzo del flexbox per il layout */
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    align-items: center; /* Centra il contenuto verticalmente */
+    height: 100vh; /* Altezza della pagina pari alla finestra del browser */
+    margin: 0; /* Rimuove i margini predefiniti */
+}
+
+/* Stile del contenitore principale */
+.container {
+    text-align: center; /* Testo centrato */
+    max-width: 800px; /* Larghezza massima del contenitore */
+    padding: 20px; /* Spaziatura interna */
+    border: 2px solid #00ffcc; /* Bordo verde acqua */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0 0 20px #00ffcc; /* Ombra verde acqua */
+    background: #1a1a1a; /* Sfondo scuro per il contenitore */
+}
+
+/* Stile dell'immagine del profilo */
+.profile-photo {
+    width: 200px; /* Larghezza dell'immagine */
+    height: 200px; /* Altezza dell'immagine */
+    margin-bottom: 20px; /* Spaziatura inferiore */
+    position: relative; /* Posizionamento relativo per l'animazione */
+    border-radius: 0; /* Rende l'immagine quadrata */
+    overflow: hidden; /* Nasconde gli elementi fuori dai bordi */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Transizione per hover */
+}
+
+    /* Effetto hover per l'immagine del profilo */
+    .profile-photo:hover {
+        transform: scale(1.1); /* Ingrandisce l'immagine */
+        box-shadow: 0 0 15px rgba(0, 255, 204, 0.7), inset 0 0 10px rgba(0, 255, 204, 0.5); /* Aggiunge un'ombra esterna e interna */
+        background-color: rgba(0, 255, 204, 0.1); /* Cambia il colore di sfondo */
+        animation: glitch 1s infinite; /* Aggiunge l'animazione di glitch */
+    }
+
+/* Stile del testo con effetto glitch */
+.glitch {
+    font-size: 1.5em; /* Dimensione del font ridotta */
+    animation: glitch 1s infinite; /* Animazione di glitch */
+    position: relative; /* Posizionamento relativo per l'effetto glitch */
+}
+
+/* Stile dei pulsanti */
 .button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    text-align: center;
-    background: #00ffcc;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background 0.3s ease, filter 0.3s ease;
+    display: inline-block; /* Visualizzazione inline-block */
+    padding: 10px 20px; /* Spaziatura interna */
+    margin-top: 20px; /* Spaziatura superiore */
+    text-align: center; /* Testo centrato */
+    background: #00ffcc; /* Sfondo verde acqua */
+    color: #000; /* Colore del testo nero */
+    text-decoration: none; /* Rimozione della sottolineatura */
+    border-radius: 5px; /* Angoli arrotondati */
+    font-size: 18px; /* Dimensione del font */
+    transition: background 0.3s ease, filter 0.3s ease; /* Transizione per hover */
 }
 
-.button:hover {
-        background: #00e6b8;
-        filter: brightness(1.1);
-    }
-.button[download] {
-        margin-bottom: 20px;
+    /* Stile dei pulsanti al passaggio del mouse */
+    .button:hover {
+        background: #00e6b8; /* Cambia il colore di sfondo */
+        filter: brightness(1.1); /* Aumenta la luminosità */
     }
 
+    /* Stile dei pulsanti con attributo download */
+    .button[download] {
+        margin-bottom: 20px; /* Spaziatura inferiore */
+    }
+
+/* Stile del contenitore del chatbot */
 #chatbot-container {
-    margin-top: 20px;
-    background: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
-    color: #000;
-    #chatbot-messages
-
-{
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 10px;
+    margin-top: 20px; /* Spaziatura superiore */
+    background: inherit; /* Sfondo chiaro */
+    padding: 10px; /* Spaziatura interna */
+    border-radius: 5px; /* Angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5); /* Ombra verde acqua */
+    color: #00ffcc; /* Colore del testo nero */
 }
 
+/* Stile dei messaggi del chatbot */
+#chatbot-messages {
+    max-height: 300px; /* Altezza massima */
+    overflow-y: auto; /* Scroll verticale */
+    margin-bottom: 10px; /* Spaziatura inferiore */
+}
+
+/* Stile dell'input del chatbot */
 #chatbot-input {
-    width: calc(100% - 110px);
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #00ffcc;
-    background: #fff;
-    color: #000;
+    width: calc(100% - 110px); /* Larghezza calcolata */
+    padding: 10px; /* Spaziatura interna */
+    margin-right: 10px; /* Spaziatura destra */
+    border: 1px solid #00ffcc; /* Bordo verde acqua */
+    background: padding-box; /* Sfondo bianco */
+    color: #00ffcc; /* Colore del testo nero */
 }
 
+/* Classe per nascondere elementi */
 .hidden {
-    display: none;
+    display: none; /* Nasconde l'elemento */
 }
 
+/* Animazione di glitch per il testo */
 @keyframes glitch {
     0% {
-        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; /* Ombra del testo */
+        clip: rect(24px, 9999px, 44px, 0);
     }
 
-    50% {
-        text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+    20% {
+        text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; /* Ombra del testo invertita */
+        clip: rect(85px, 9999px, 140px, 0);
     }
 
     100% {
-        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+        text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; /* Ombra del testo invertita */
+        clip: rect(0px, 9999px, 70px, 0);
     }
 }
 
-.glitch {
-    animation: glitch 1s infinite;
-}
-
-.hidden {
-    display: none;
-}
-
+/* Stile dell'iframe */
 iframe {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1000;
+    position: fixed; /* Posizionamento fisso */
+    bottom: 10px; /* Posizione dal basso */
+    right: 10px; /* Posizione da destra */
+    z-index: 1000; /* Livello di profondità */
 }
+
+/* Stile del testo del terminale */
+.terminal-text {
+    font-family: 'Cascadia Mono', monospace; /* Font monospace */
+    font-size: 1em; /* Dimensione del font */
+    color: #00ffcc; /* Colore del testo verde acqua */
+    background: inherit; /* Sfondo scuro */
+    padding: 10px; /* Spaziatura interna */
+    border-radius: 5px; /* Angoli arrotondati */
+    position: relative; /* Posizionamento relativo per il trattino basso */
+    display: inline-block; /* Necessario per il trattino basso */
+}
+
+    /* Aggiungi un trattino basso intermittente */
+    .terminal-text::after {
+        content: '_'; /* Trattino basso */
+        animation: blink 1s step-end infinite; /* Animazione di blink */
+        position: absolute; /* Posizionamento assoluto */
+        right: +285px; /* Allinea a destra con un offset negativo */
+    }
+
+/* Animazione per il trattino basso intermittente */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* Trattino visibile */
+    }
+
+    50% {
+        opacity: 0; /* Trattino invisibile */
+    }
+}
+
+
+
 
 
