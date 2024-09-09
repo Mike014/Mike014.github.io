@@ -8,26 +8,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cascadia+Mono&display=swap">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/chatbot.js" defer></script>
+
+    <script src="https://unpkg.com/compromise@latest/builds/compromise.min.js"></script>
+
     <script src="scripts/soundEffects.js" defer></script>
+
+    <style>
+        /* Stile per l'iframe */
+        #iframe-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
-    <audio id="background-audio" src="assets/soundEffects/background.mp3" loop></audio>
     <audio id="typing-sound" src="assets/soundEffects/typing.mp3"></audio>
-    <script>
-        document.addEventListener('click', function () {
-            const audio = document.getElementById('background-audio');
-            audio.play().catch(function (error) {
-                console.error('Error playing audio:', error);
-            });
-        }, { once: true });
-
-        document.getElementById('chatbot-input').addEventListener('input', function () {
-            const typingSound = document.getElementById('typing-sound');
-            typingSound.play().catch(function (error) {
-                console.error('Error playing typing sound:', error);
-            });
-        });
-    </script>
+    <audio id="click-sound" src="assets/soundEffects/click.mp3"></audio>
+    <audio id="hover-sound" src="assets/soundEffects/hover.mp3"></audio>
     <div class="container">
         <img src="assets/photo.jpg" alt="Your Photo" class="profile-photo">
         <h1 class="cyberpunk-title">Hi, I'm Michele</h1>
@@ -47,19 +46,41 @@
             <a href="https://www.linkedin.com/in/michele-grimaldi-599b36280/" target="_blank" class="button">LinkedIn</a>
             <a href="https://github.com/Mike014" target="_blank" class="button">GitHub</a>
         </div>
-        <button id="chatbot-button" class="button">Chabot</button>
+        <button id="chatbot-button" class="button">Chatbot</button>
         <div id="chatbot-container" class="hidden">
             <div id="chatbot-messages"></div>
             <input type="text" id="chatbot-input" placeholder="Type a message...">
             <button id="send-message" class="button">Send</button>
         </div>
-        <button id="play-spotify" class="button">Play Spotify</button>
-        <div id="spotify-container" class="hidden">
-            <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/1TEZWG1FdjzDdercCguTwj?si=802e865fea584265" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div id="iframe-container">
+            <iframe id="iframe" src="https://open.spotify.com/embed/track/65ldiU8QU4tKolEJtbPfZE?si=003a6ca54d224cf6" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('chatbot-input').addEventListener('input', function () {
+                const typingSound = document.getElementById('typing-sound');
+                typingSound.play().catch(function (error) {
+                    console.error('Error playing typing sound:', error);
+                });
+            });
+
+            const buttons = document.querySelectorAll('.button');
+            const hoverSound = document.getElementById('hover-sound');
+
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    hoverSound.currentTime = 0; // Reset audio to start
+                    hoverSound.play().catch(function (error) {
+                        console.error('Error playing hover sound:', error);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
 
 
 
